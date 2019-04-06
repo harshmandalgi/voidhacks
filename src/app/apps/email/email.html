@@ -1,0 +1,128 @@
+<div class="full-container">
+	<div class="email-app" [ngClass]="{'mail-nav-active': emailLayout.emailNavMobile}"> 
+		<div class="sec-side-nav">
+			<div class="side-nav-inner">
+				<a href="" [routerLink]="['/apps/email/email-compose']" (click)="emailLayout.emailViewMobile = !emailLayout.emailViewMobile; emailLayout.emailNavMobile = !emailLayout.emailNavMobile" class="btn btn-info btn-block">Compose</a>
+				<ul>
+					<li>
+						<a href="">
+							<i class="ti-email"></i>
+							<span>Inbox</span>
+							<span class="label label-primary">18</span>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<i class="ti-star"></i>
+							<span>Starred</span>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<i class="ti-share"></i>
+							<span>Sent</span>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<i class="ti-file"></i>
+							<span>Draft</span>
+							<span class="label label-danger">2</span>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<i class="ti-alert"></i>
+							<span>Spam</span>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<i class="ti-trash"></i>
+							<span>Deleted</span>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<i class="ti-settings"></i>
+							<span>Setting</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="email-wrapper row">
+			<div class="email-list">
+                <div class="email-list-tools">
+                    <ul class="tools pull-left">
+                        <li class="d-lg-none">
+                            <a href="javascript:void(0)" (click)="emailLayout.emailNavMobile = !emailLayout.emailNavMobile">
+                                <i class="ti-menu"></i>
+                            </a>
+                        </li> 
+                       <li>
+                            <a href="">
+                                <span class="font-size-14">Mark as Read</span>
+                            </a>
+                        </li> 
+                    </ul>
+                    <ul class="tools text-right">
+                        <li>
+                            <a href="javascript:void(0);">
+                                <i class="ti-star"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">
+                                <i class="ti-timer"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">
+                                <i class="ti-trash"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <perfect-scrollbar class="email-list-wrapper" >
+                    <div class="list-view-group-container" *ngFor="let email of emails">
+                        <ul class="email-list-item">
+                            <li class="email-item" *ngFor="let emailItem of email.list ; let i=index" (click)="onSelect(emailItem); emailLayout.emailViewMobile = !emailLayout.emailViewMobile"> 
+                                <div class="email-tick">
+									<div class="checkbox"> 
+										<input type="checkbox" id="email-{{i}}"> 
+										<label for="email-{{i}}"></label> 
+									</div> 
+								</div>
+								<div class="email-detail"> 
+									<p class="from">{{emailItem.from}}</p> 
+									<p class="subject">
+										{{emailItem.subject | slice:0:20}}
+										{{emailItem.subject.length > 20 ? '...' : ''}}
+									</p> 
+									<p> 
+										{{formatBody(emailItem.body) | slice:0:30}}
+										{{formatBody(emailItem.body).length > 30 ? '...' : ''}}
+									</p> 
+									<span class="datetime">{{emailItem.time}}</span>
+								</div>
+                            </li>
+                        </ul>
+                    </div>
+                </perfect-scrollbar>
+			</div>
+			<div class="email-content" [ngClass]="{'open': emailLayout.emailViewMobile}">
+				<div class="email-content-tools">
+						<ul>
+							<li>
+								<a href="javascript:void(0)" (click)="emailLayout.emailViewMobile = !emailLayout.emailViewMobile">
+									<i class="ti-arrow-circle-left"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+				<router-outlet></router-outlet>
+			</div>
+		</div>
+	</div>	
+</div>

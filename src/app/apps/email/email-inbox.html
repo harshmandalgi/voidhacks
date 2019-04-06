@@ -1,0 +1,79 @@
+
+<div class="email-content-tools bg-transparent">
+    
+    <ul class="text-right">
+        <li>
+            <a href="">
+                <i class="fa fa-reply"></i>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <i class="ti-star"></i>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <i class="ti-flag"></i>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <i class="ti-more-alt"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="email-content-wrapper" *ngIf="emailItem">
+    <div class="email-content-detail">
+        <div class="detail-head">
+            <ul class="list-unstyled list-info">
+                <li>
+                    <div class="pdd-vertical-10 pdd-horizon-20">	
+                        <img class="thumb-img img-circle" [src]="emailItem.avatar" alt="">
+                        <div class="info">
+                            <span class="title font-size-16">{{emailItem.from}}</span>
+                            <span class="sub-title">
+                                <span>To: {{emailItem.to}}</span>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="tools">
+                <li class="font-size-13">{{emailItem.time}}</li>
+                <li class="d-none d-md-inline-block">
+                    <a href="">
+                        <i class="fa fa-reply"></i>
+                    </a>
+                </li>
+                <li class="d-none d-md-inline-block">
+                    <a href="">
+                        <i class="ti-more-alt"></i>
+                    </a>
+                </li>
+            </ul>
+        </div> 
+        <div class="detail-body">
+            <h4>{{emailItem.subject}}</h4>
+            <div class="mrg-top-15" [innerHtml]="emailItem.body"></div>
+        </div>    
+        <div class="detail-foot">
+            <div *ngIf="emailItem.files">
+                <ul class="attachments">
+                    <li *ngFor="let file of emailItem.files">
+                        <a href="javascript:;">
+                            <div class="file-icon">
+                                <i class="fa fa-file-{{file.type}}-o"></i> 
+                            </div>
+                            <div class="file-info">
+                                <span class="file-name">{{file.filename}}</span>
+                                <span class="file-size"> {{file.size}}</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

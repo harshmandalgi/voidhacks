@@ -1,0 +1,152 @@
+<div class="container-fluid">
+	<div class="page-title">
+		<h4>ChartJs </h4>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="card">
+				<div class="card-heading border bottom">
+					<h4 class="card-title">Pie Chart</h4>
+				</div>
+				<div class="card-block">
+                    <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType" [legend]="pieChartLegend" [colors]="pieChartColors"></canvas>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="card">
+				<div class="card-heading border bottom">
+					<h4 class="card-title">Donut Chart</h4>
+				</div>
+				<div class="card-block">
+                    <canvas baseChart [data]="donutChartData" [labels]="donutChartLabels" [chartType]="donutChartType"[legend] = "donutChartLegend" [colors]="donutChartColors" [options]="dountChartOptions"></canvas>                        
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="card">
+				<div class="card-heading border bottom">
+					<h4 class="card-title">Radar Chart</h4>
+				</div>
+				<div class="card-block">
+                    <canvas baseChart [datasets]="radarChartData" [labels]="radarChartLabels" [chartType]="radarChartType" [legend]="radarChartLegend" [colors]="radarChartColors"></canvas>                        
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="card">
+				<div class="card-heading border bottom">
+					<h4 class="card-title">Polar Chart</h4>
+				</div>
+				<div class="card-block">
+                    <canvas baseChart [data]="polarChartData" [labels]="polarChartLabels" [chartType]="polarChartType" [legend]="polarChartLegend" [colors]="polarChartColors"></canvas>     
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="card">
+				<div class="card-heading border bottom">
+					<h4 class="card-title">Line Chart</h4>
+				</div>
+				<div class="card-block">
+                    <canvas baseChart height="400" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType"></canvas>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="card">
+				<div class="card-heading border bottom">
+					<h4 class="card-title">Bar Chart</h4>
+				</div>
+				<div class="card-block">
+                    <canvas baseChart height="80" [datasets]="barChartData" [labels]="barChartLabels" [legend]="barChartLegend" [chartType]="barChartType" [colors]="barChartColors"></canvas>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+		<div class="col-lg-9">
+			<div class="card">
+				<div class="row">
+					<div class="col-md-8">
+						<div class="maps map-500 padding-20">
+                            <div id="dashboardMap" class="ammap"></div>
+						</div>
+					</div>
+					<div class="col-md-4 border left border-hide-sm">
+						<div class="card-block">
+							<h2>Mortality rate </h2>
+							<div class="mrg-top-40">
+                                <canvas height="230" baseChart [data]="donutChartData" [labels]="donutChartLabels" [chartType]="donutChartType"[legend] = "donutChartLegend" [colors]="donutChartColors" [options]="dountChartOptions"></canvas>         
+							</div>
+							<div class="widget-legends mrg-top-30">
+								<div class="relative mrg-top-15">
+									<span class="status info"> </span>
+									<span class="pdd-left-20 font-size-16"><b class="text-dark">25%</b> Andhra Pradesh</span>
+								</div>
+								<div class="relative mrg-top-15">
+									<span class="status primary"> </span>
+									<span class="pdd-left-20 font-size-16"><b class="text-dark">45%</b> Uttar Pradesh</span>
+								</div>
+								<div class="relative mrg-top-15">
+									<span class="status success"> </span>
+									<span class="pdd-left-20 font-size-16"><b class="text-dark">10%</b> Kashmir</span>
+								</div>
+								<div class="relative mrg-top-15">
+									<span class="status"> </span>
+									<span class="pdd-left-20 font-size-16"><b class="text-dark">15%</b> Madhya pradesh</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card-footer d-none d-md-inline-block">
+					<div class="text-center">
+						<div class="row">
+							<div class="col-md-10 ml-auto mr-auto">
+								<div class="row">
+									<div class="col-md-3">
+										<div class="pdd-vertical-5">
+											<p class="no-mrg-btm"><b class="text-dark font-size-16">968</b> Customers</p>
+										</div>
+									</div>
+									<div class="col-md-3">
+										<div class="pdd-vertical-5">
+											<p class="no-mrg-btm"><b class="text-dark font-size-16">1.8k</b> Orders</p>
+										</div>
+									</div>
+									<div class="col-md-3">
+										<div class="pdd-vertical-5">
+											<p class="no-mrg-btm"><b class="text-dark font-size-16">30k</b> Stock Left</p>
+										</div>
+									</div>
+									<div class="col-md-3">
+										<div class="pdd-vertical-5">
+											<p class="no-mrg-btm"><b class="text-dark font-size-16">1.7k</b> Pending</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+			
+			
+			
+			
+			
+		</div>	
+	</div>
+		
