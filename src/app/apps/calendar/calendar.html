@@ -1,0 +1,37 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-4">
+			<div class="card calendar-event">
+				<div class="card-block overlay-dark bg" style="background-image: url('assets/images/others/img-8.jpg')">
+					<div class="text-center">
+						<h1 class="font-size-65 text-light mrg-btm-5 lh-1">28<span class="font-size-18">th</span></h1>
+						<h2 class="no-mrg-top">Sunday</h2>
+					</div>
+				</div>
+				<div class="card-block">
+					<button type="button" class="add-event btn-warning" (click)="addEvent(calendarOptions)">
+                    	<i class="ti-plus"></i>
+                    </button>
+                    <ul class="event-list">
+                        <li class="event-items" *ngFor="let event of calendarOptions.events">
+                            <a href="javascript:void(0);" class="">
+                                <span class="bullet {{event.bullet}}"></span>
+                                <span class="event-name"> {{event.title}}</span>
+                                <div class="event-detail">
+                                    <span>{{event.start | date:"MMM dd"}} - {{event.end | date:"MMM dd"}}</span>
+                                    <i>{{event.desc}}</i>
+                                </div>
+                            </a>
+                            <a href="javascript:void(0);" (click)="removeEvent(index, calendarOptions)" class="remove">
+                                <i class="ti-trash"></i>
+                            </a>
+                        </li>
+                    </ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-8">
+			<angular2-fullcalendar [options]="calendarOptions"></angular2-fullcalendar>
+		</div>
+	</div>
+</div>

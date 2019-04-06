@@ -1,0 +1,56 @@
+<div class="container-fluid">
+    <div class="page-title">
+        <h4>Nvd3 Charts</h4>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-heading border bottom">
+                    <h4 class="card-title">Line Chart</h4>
+                </div>
+                <div class="card-block">
+                    <nvd3 [options]="lineChartOption" [data]="lineChartData"></nvd3>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-heading border bottom">
+                    <h4 class="card-title">Discretebar Chart</h4>
+                </div>
+                <div class="card-block">
+                    <nvd3 [options]="barChartOption" [data]="barChartData"></nvd3>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-heading border bottom">
+                    <h4 class="card-title">Stacked Area Chart</h4>
+                </div>
+                <div class="card-block">
+                    <nvd3 [options]="areaChartOptions" [data]="areaChartData"></nvd3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-heading border bottom">
+                    <h4 class="card-title">Pie Chart</h4>
+                </div>
+                <div class="card-block">
+                    <nvd3 [options]="pieChartOption" [data]="donutChartData"></nvd3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-heading border bottom">
+                    <h4 class="card-title">Donut Chart</h4>
+                </div>
+                <div class="card-block">
+                    <nvd3 [options]="donutChartOption" [data]="donutChartData"></nvd3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+      
